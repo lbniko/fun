@@ -18,7 +18,7 @@ export function SiteCard({ title, description, imageUrl, link }: SiteCardProps) 
 
 
     return (
-        <div className="cursor-pointer max-w-sm rounded-2xl overflow-hidden shadow-lg bg-neutral-900 transition duration-300 hover:-translate-y-1" onClick={handleClick}>
+        <div className="cursor-pointer max-w-sm rounded-2xl m-8 overflow-hidden shadow-lg bg-neutral-900 transition duration-300 hover:-translate-y-1" onClick={handleClick}>
             <img className="w-full" src={imageUrl} alt={title} />
             <div className="px-6 py-4"> 
                 <h2 className="text-xl font-bold mb-2">{title}</h2>
