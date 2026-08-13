@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 
 interface SiteCardProps {
   title: string;
@@ -7,8 +9,14 @@ interface SiteCardProps {
 }
 
 export function SiteCard({ title, description, imageUrl, link }: SiteCardProps) {
+
+    const handleClick = () => {
+        redirect(link);
+    }
+
+
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-900 border border-gray-700">
+        <div className="cursor-pointer max-w-sm rounded-2xl overflow-hidden shadow-lg bg-neutral-900 transition duration-300 hover:-translate-y-1" onClick={handleClick}>
             <img className="w-full" src={imageUrl} alt={title} />
             <div className="px-6 py-4"> 
                 <h2 className="text-xl font-bold mb-2">{title}</h2>
