@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Reject App",
-  description: "Reject anyone creatively in seconds! Powered by Naas API",
+  title: "Fun Projects - lbniko.com",
+  description: "Fun projects I made cause why not.",
 };
 
 export default function RootLayout({
