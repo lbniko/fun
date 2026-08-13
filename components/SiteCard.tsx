@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 
 interface SiteCardProps {
@@ -9,9 +9,11 @@ interface SiteCardProps {
 }
 
 export function SiteCard({ title, description, imageUrl, link }: SiteCardProps) {
+    const router = useRouter();
+
 
     const handleClick = () => {
-        redirect(link);
+        router.push(link);
     }
 
 
