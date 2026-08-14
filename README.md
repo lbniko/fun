@@ -5,23 +5,15 @@ Credit to hotheadhacker for [the no-as-a-service API](github.com/hotheadhacker/n
 Firstly, open your terminal in the folder where you want the site and type:
 
 ```
-git clone https://github.com/lbniko/no-site.git
+git clone https://github.com/lbniko/fun.git
 ```
 
 Then,
 
 ```
-cd no-site
+cd fun
 ```
 
-After that, copy .env.default to .env by typing
-
-```
-cp .env.default .env
-```
-
-Then, sign up for [TranslateAPI](translateapi.ai), and create your API key.
-Put the API key in .env as instructed.
 
 ## Trying it out
 
@@ -31,4 +23,4 @@ Run
 npm run dev
 ```
 
-then visit `localhost:3000` to view your website.
+then visit `localhost:3000` to view the website.
