@@ -21,7 +21,7 @@ export function SiteCard({
 
 	return (
 		<div
-			className="cursor-custom-pointer max-w-sm rounded-2xl m-8 bg-gradient-to-br from-zinc-800 to-zinc-950 overflow-hidden shadow-lg bg-neutral-900 transition duration-300 hover:-translate-y-1"
+			className="cursor-custom-pointer w-80 rounded-2xl bg-gradient-to-br from-zinc-800 to-zinc-950 overflow-hidden shadow-lg bg-neutral-900 transition duration-300 hover:-translate-y-1"
 			onClick={handleClick}
 		>
 			<img className="w-full" src={imageUrl} alt={title} />

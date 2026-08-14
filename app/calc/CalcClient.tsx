@@ -44,7 +44,7 @@ export default function CalcClient() {
 
 	return (
 		<Background fc={true}>
-			<h1 className="absolute top-4 left-4 text-4xl font-bold text-zinc-100">
+			<h1 className="pr-40 absolute top-4 left-4 text-3xl sm:text-4xl font-bold text-zinc-100">
 				Days Old Calculator
 			</h1>
 			<HomeButton text="Home" />
@@ -65,9 +65,9 @@ export default function CalcClient() {
 						onClick={handleCalcPress}
 					/>
 
-					<div className="h-6 flex items-center justify-center">
+					<div className="py-6 h-6 flex items-center justify-center">
 						<p
-							className={`text-xl font-semibold ${err ? "text-red-400" : "text-green-400"} transition-all duration-500 ${vis ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+							className={`text-md sm:text-xl font-semibold ${err ? "text-red-400" : "text-green-400"} transition-all duration-500 ${vis ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
 						>
 							{res}
 						</p>

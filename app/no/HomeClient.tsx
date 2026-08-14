@@ -101,22 +101,22 @@ export default function HomeClient() {
 
 	return (
 		<Background fc={true}>
-			<h1 className="absolute top-4 left-4 text-4xl font-bold text-zinc-100">
+			<h1 className="absolute top-4 left-4 text-3xl sm:text-4xl font-bold text-zinc-100">
 				Reject App
 			</h1>
 
 			<HamburgerMenu />
 
 			<div className="w-full flex justify-center">
-				<p className="w-full max-w-4xl text-balance text-center text-4xl font-bold text-gray-900 dark:text-white">
+				<p className="w-full max-w-4xl text-balance text-center text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
 					You don't feel like going? Get a good reason to reject whatever idea
 					your friend has!
 				</p>
 			</div>
 
-			<div className="h-10 flex items-center justify-center">
+			<div className="h-15 sm:h-10 flex items-center justify-center">
 				{noRes && (
-					<p className="text-3xl text-center text-gray-700 dark:text-gray-300">
+					<p className="text-2xl sm:text-3xl text-center text-gray-700 dark:text-gray-300">
 						{typedText}
 					</p>
 				)}
@@ -137,7 +137,7 @@ export default function HomeClient() {
 			</div>
 			<div className="h-6 flex items-center justify-center">
 				<p
-					className={`text-xl font-semibold ${err ? "text-red-400" : "text-green-400"} transition-all duration-500 ${vis ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+					className={`text-md sm:text-xl font-semibold ${err ? "text-red-400" : "text-green-400"} transition-all duration-500 ${vis ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
 				>
 					{feedback}
 				</p>

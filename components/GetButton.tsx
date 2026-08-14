@@ -17,7 +17,7 @@ export function GetButton({
 		<button
 			onClick={onClick}
 			disabled={disabled}
-			className={`cursor-custom-pointer rounded-3xl bg-gradient-to-r from-red-600 to-red-700 px-6 py-3 m-3 text-xl outline-none text-white ${disabled && "cursor-c-hourglass"} ${!disabled && "hover:bg-gradient-to-r hover:from-red-700 hover:to-red-800 hover:-translate-y-0.5 transition duration-400"} `}
+			className={`cursor-custom-pointer rounded-3xl bg-gradient-to-r from-red-600 to-red-700 px-6 py-3 m-3 text-md sm:text-xl outline-none text-white ${disabled && "cursor-c-hourglass"} ${!disabled && "hover:bg-gradient-to-r hover:from-red-700 hover:to-red-800 hover:-translate-y-0.5 transition duration-400"} `}
 		>
 			{disabled ? loadingText : text}
 		</button>

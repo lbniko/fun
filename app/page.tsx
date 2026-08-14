@@ -8,6 +8,7 @@ import { Background } from "@/components/Background"
 export default function Home() {
 	return (
 		<Background>
+			
 			<h1 className="absolute top-4 px-8 py-4 text-5xl font-bold text-zinc-100">
 				Fun Site
 			</h1>
@@ -15,6 +16,7 @@ export default function Home() {
 				This is a fun site where you can explore various projects and ideas.
 				Below you can choose from my projects.
 			</p>
+			<div className="pt-50 grid grid-cols-[repeat(auto-fit,minmax(320px,320px))] justify-center gap-8 max-w-full">
 			<SiteCard
 				title="Rejection Generator"
 				description="A site where you can get funny rejections. Great for social scenarios."
@@ -27,6 +29,7 @@ export default function Home() {
 				imageUrl="/calc.png"
 				link="/calc"
 			/>
+			</div>
 		</Background>
 	)
 }
