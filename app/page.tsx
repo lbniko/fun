@@ -24,7 +24,7 @@ export default function Home() {
 				link="/no"
 			/>
 			<SiteCard
-				title="Days Calculator"
+				title="Days Old Calculator"
 				description="You can calculate your age in days on this site."
 				imageUrl="/calc.png"
 				link="/calc"

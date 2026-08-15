@@ -49,3 +49,13 @@ input input[type="date"]::-webkit-calendar-picker-indicator {
 .cursor-c-hourglass {
 	cursor: url("/cursors/hourglass.cur"), wait;
 }
+
+::selection {
+  background: #B91C1C;
+  color: white;
+}
+
+::-moz-selection {
+  background: #B91C1C;
+  color: white;
+}

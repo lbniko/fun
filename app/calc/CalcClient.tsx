@@ -37,6 +37,19 @@ export default function CalcClient() {
 		const diff = today.getTime() - birthDate.getTime()
 		const days = Math.floor(diff / (1000 * 60 * 60 * 24))
 		setErr(false)
+		if (days === 1) {
+			setRes(`You are ${days} day old!`)
+			setLoading(false)
+			setVis(true)
+			return
+		}
+		if (days === 0) {
+			setErr(true)
+			setRes(`I feel it is highly improbable that you were born today.`)
+			setLoading(false)
+			setVis(true)
+			return
+		}
 		setRes(`You are ${days} days old!`)
 		setLoading(false)
 		setVis(true)
@@ -44,6 +57,11 @@ export default function CalcClient() {
 
 	return (
 		<Background fc={true}>
+			<div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+    <span className="xl:text-[33rem] lg:text-[25rem] md:text-[20rem] sm:text-[16rem] text-center text-[10rem] font-black  sm:text-white/4 text-white/0 select-none">
+      DAYS
+    </span>
+  </div>
 			<h1 className="pr-40 absolute top-4 left-4 text-3xl sm:text-4xl font-bold text-zinc-100">
 				Days Old Calculator
 			</h1>

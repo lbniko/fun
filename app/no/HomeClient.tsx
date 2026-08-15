@@ -101,6 +101,11 @@ export default function HomeClient() {
 
 	return (
 		<Background fc={true}>
+			<div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+    <span className="xl:text-[20rem] lg:text-[17rem] md:text-[13rem] text-center text-[7rem] font-black  md:text-white/4 text-white/0 select-none">
+      REJECT
+    </span>
+  </div>
 			<h1 className="absolute top-4 left-4 text-3xl sm:text-4xl font-bold text-zinc-100">
 				Reject App
 			</h1>
