@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 import { Background } from "@/components/Background"
 import { GetButton } from "@/components/GetButton"
 import { HomeButton } from "@/components/HomeButton"
@@ -11,9 +12,14 @@ export default function CalcClient() {
 	const [loading, setLoading] = useState(false)
 	const [err, setErr] = useState(false)
 	const [vis, setVis] = useState(false)
+	const [daysOld, setDaysOld] = useState<number | null>(null)
+	const importantDays = [2500, 5000, 7500, 10000, 15000, 20000, 25000, 30000, 35000]
+	const [actuallyImportant, setActuallyImportant] = useState<number[]>([])
+	const [ milestoneVis, setMilestoneVis] = useState(false)
 
 	const handleCalcPress = async (e: React.FormEvent) => {
 		setVis(false)
+		setDaysOld(null)
 		e.preventDefault()
 		setLoading(true)
 		if (!birthday) {
@@ -37,6 +43,7 @@ export default function CalcClient() {
 		const diff = today.getTime() - birthDate.getTime()
 		const days = Math.floor(diff / (1000 * 60 * 60 * 24))
 		setErr(false)
+		setDaysOld(days)
 		if (days === 1) {
 			setRes(`You are ${days} day old!`)
 			setLoading(false)
@@ -51,8 +58,13 @@ export default function CalcClient() {
 			return
 		}
 		setRes(`You are ${days} days old!`)
+		const actuallyImportant = importantDays.filter((day) => day > days)
+		setActuallyImportant(actuallyImportant)
 		setLoading(false)
 		setVis(true)
+		console.log(actuallyImportant)
+		console.log("this runs")
+		setMilestoneVis(true)
 	}
 
 	return (
@@ -67,7 +79,7 @@ export default function CalcClient() {
 			</h1>
 			<HomeButton text="Home" />
 
-			<div className="flex min-h-screen flex-col items-center justify-center px-6">
+			<div className="flex min-h-screen flex-col items-center justify-start px-6 pt-[24vh] pb-8">
 				<div className="w-full max-w-md space-y-6 text-center">
 					<input
 						type="date"
@@ -89,6 +101,32 @@ export default function CalcClient() {
 						>
 							{res}
 						</p>
+					</div>
+					<div className={`transition-all duration-500 ${milestoneVis ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+					<AnimatePresence>
+						{vis && !err && daysOld !== null && (
+							<motion.div
+								initial={{ opacity: 0, y: -8 }}
+								animate={{ opacity: 1, y: 0 }}
+								exit={{ opacity: 0, y: -8 }}
+								transition={{ duration: 0.25, ease: "easeOut" }}
+								className="mt-6 w-full rounded-xl border border-neutral-700 bg-neutral-900/70 p-4 text-left"
+							>
+							<h2 className="mb-3 text-lg font-semibold text-zinc-100">Upcoming milestones</h2>
+							{actuallyImportant.length > 0 ? (
+								<div className="space-y-2">
+									{actuallyImportant.map((day) => (
+										<p key={day} className="text-md sm:text-lg font-semibold text-zinc-300">
+											You will be {day} days old on {new Date(new Date(birthday).getTime() + day * 24 * 60 * 60 * 1000).toLocaleDateString()}.
+										</p>
+									))}
+								</div>
+							) : (
+								<p className="text-zinc-300">No future milestones are configured yet.</p>
+							)}
+							</motion.div>
+						)}
+					</AnimatePresence>
 					</div>
 				</div>
 			</div>
