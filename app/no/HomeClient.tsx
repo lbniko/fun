@@ -6,6 +6,7 @@ import { Background } from "@/components/Background"
 import { GetButton } from "@/components/GetButton"
 import HamburgerMenu from "@/components/HamburgerMenu"
 import { setServers } from "dns"
+import { motion } from "framer-motion"
 
 export default function HomeClient() {
 	const [feedback, setFeedback] = useState("")
@@ -100,6 +101,7 @@ export default function HomeClient() {
 	}, [noRes])
 
 	return (
+	<div className="min-h-screen bg-black">
 		<Background fc={true}>
 			<div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
     <span className="xl:text-[20rem] lg:text-[17rem] md:text-[13rem] text-center text-[7rem] font-black  md:text-white/4 text-white/0 select-none">
@@ -148,5 +150,6 @@ export default function HomeClient() {
 				</p>
 			</div>
 		</Background>
+		</div>
 	)
 }

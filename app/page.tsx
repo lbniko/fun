@@ -5,9 +5,11 @@ import { useState, useEffect } from "react"
 import { SiteCard } from "@/components/SiteCard"
 import { Background } from "@/components/Background"
 import ScatterText from "@/components/originkit/ui/dot-scatter";
+import { motion } from "framer-motion"
 
 export default function Home() {
 	return (
+		<div className="min-h-screen bg-black">
 		<Background>
 			<div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
     <span className="xl:text-[40rem] lg:text-[30rem] md:text-[25rem] sm:text-[20rem] text-center text-[10rem] font-black  md:text-white/4 text-white/0 select-none">
@@ -36,5 +38,6 @@ export default function Home() {
 			/>
 			</div>
 		</Background>
+		</div>
 	)
 }

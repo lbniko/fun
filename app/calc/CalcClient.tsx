@@ -68,6 +68,7 @@ export default function CalcClient() {
 	}
 
 	return (
+		<div className="min-h-screen bg-black">
 		<Background fc={true}>
 			<div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
     <span className="xl:text-[33rem] lg:text-[25rem] md:text-[20rem] sm:text-[16rem] text-center text-[10rem] font-black  sm:text-white/4 text-white/0 select-none">
@@ -131,5 +132,6 @@ export default function CalcClient() {
 				</div>
 			</div>
 		</Background>
+		</div>
 	)
 }
