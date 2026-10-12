@@ -73,12 +73,20 @@ export async function POST(request: NextRequest) {
   const buffer = await response.arrayBuffer();
   const html_content = new TextDecoder("windows-1250").decode(buffer);
 
-  if (
-    !html_content.includes("<BIG>") ||
-    !html_content.includes("órarendje</BIG>")
-  ) {
-    return null;
-  }
+
+if (
+  !html_content.includes("<BIG>") ||
+  !html_content.includes("órarendje</BIG>")
+) {
+  return Response.json(
+    {
+      error: "Authentication failed or timetable not found",
+    },
+    { status: 401 },
+  );
+}
+
+
 
   const $ = load(html_content);
 
