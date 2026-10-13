@@ -35,12 +35,11 @@ export interface TimetableWeek {
 
 
 
-export async function POST(request: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
 
-    const body = await request.json();
-
-  const { EJG_code, OM5 } = body;
+    const EJG_code = "2025F33EJG414"
+    const OM5 = "05414"
 
 
   const response = await fetch(
